@@ -5,14 +5,8 @@ import static org.testng.Assert.assertTrue;
 public class LoginTests extends BaseTest{
 
     @Test
-    public void defaultLogin(){
+    public void testDefaultLogin(){
         boolean logged = homePage.defaultLogin().validateLogin();
         assertTrue(logged);
     }
-
-
-
-
-
-
 }

@@ -40,7 +40,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RunManager" selected="TestNG.LoginTests.testDefaultLogin">
     <configuration name="LoginTests.defaultLogin" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="selenium-HRMOrange" />
       <option name="PACKAGE_NAME" value="" />
@@ -53,8 +53,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="LoginTests.testDefaultLogin" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="selenium-HRMOrange" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="LoginTests" />
+      <option name="METHOD_NAME" value="testDefaultLogin" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.LoginTests.testDefaultLogin" />
         <item itemvalue="TestNG.LoginTests.defaultLogin" />
       </list>
     </recent_temporary>
