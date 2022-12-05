@@ -4,25 +4,26 @@ import org.openqa.selenium.support.FindBy;
 
 public class LoginPage extends BasePage{
 
-    @FindBy(xpath="input[name='username']")
+    @FindBy(xpath="//input[@name='username']")
     private WebElement usernameField;
-    @FindBy(xpath="input[name='password']")
+    @FindBy(xpath="//input[@name='password']")
     private WebElement passwordField;
-    @FindBy(xpath="button[type='submit']")
+    @FindBy(xpath="//button[@type='submit']")
     private WebElement loginButton;
 
     public LoginPage(WebDriver driver) {
         super(driver);
     }
 
-    public void login(String username, String password){
-        usernameField.sendKeys(username);
-        passwordField.sendKeys(password);
+    public DashboardPage login(String username, String password){
+        visibilityOf(usernameField).sendKeys(username);
+        visibilityOf(passwordField).sendKeys(password);
         loginButton.click();
+        return new DashboardPage(driver);
     }
 
-    public void defaultLogin(){
-        login("Admin", "admin123");
+    public DashboardPage defaultLogin(){
+        return login("Admin", "admin123");
     }
 
 }
