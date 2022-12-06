@@ -1,6 +1,6 @@
 import org.openqa.selenium.WebDriver;
 
-public class DashboardPage extends BasePage{
+public class DashboardPage extends NavBar {
     public DashboardPage(WebDriver driver) {
         super(driver);
     }
