@@ -6,7 +6,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class BasePage {
+class BasePage {
     protected WebDriver driver;
 
     public BasePage(WebDriver driver){
@@ -20,4 +20,22 @@ public class BasePage {
     protected WebElement visibilityOf(WebElement element){
         return visibilityOf(element, 5);
     }
+
+    protected void click(WebElement element, int seconds){
+        new WebDriverWait(driver, Duration.ofSeconds(seconds)).until(ExpectedConditions.elementToBeClickable(element)).click();
+    }
+
+    protected void click(WebElement element){
+        click(element, 5);
+    }
+
+    protected void sendKeys(WebElement element, String keys, int seconds){
+        new WebDriverWait(driver, Duration.ofSeconds(seconds)).until(ExpectedConditions.visibilityOf(element)).clear();
+        element.sendKeys(keys);
+    }
+
+    protected void sendKeys(WebElement element, String keys){
+        sendKeys(element, keys, 5);
+    }
+
 }
