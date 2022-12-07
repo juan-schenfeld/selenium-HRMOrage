@@ -2,10 +2,14 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class NavBar extends BasePage {
+class NavBar extends BasePage {
 
-    @FindBy(xpath="//a[contains(@href, 'viewAdminModule')]")
+    @FindBy(xpath="//a[string()='Admin']")
     private WebElement adminPageButton;
+    @FindBy(xpath="//a[string()='PIM']")
+    private WebElement pIMPageButton;
+
+
     public NavBar(WebDriver driver) {
         super(driver);
     }
@@ -14,6 +18,11 @@ public class NavBar extends BasePage {
     public AdminUserManagementPage goToUserManagement(){
         visibilityOf(adminPageButton).click();
         return new AdminUserManagementPage(driver);
+    }
+
+    public PIMPage goToPIM(){
+        visibilityOf(pIMPageButton).click();
+        return new PIMPage(driver);
     }
 
 }
