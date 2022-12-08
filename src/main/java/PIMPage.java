@@ -1,6 +1,11 @@
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.io.File;
+import java.time.Duration;
 
 public class PIMPage extends NavBar{
 
@@ -35,6 +40,8 @@ public class PIMPage extends NavBar{
         private WebElement passwordField;
         @FindBy(xpath="//label[string()='Confirm Password']/../..//input")
         private WebElement confirmPasswordField;
+        @FindBy(xpath="//input[@type='file']")
+        private WebElement photoInput;
         @FindBy(xpath="//button[@type='submit']")
         private WebElement saveButton;
 
@@ -94,9 +101,18 @@ public class PIMPage extends NavBar{
             return this;
         }
 
+        public AddEmployeePage addPhoto(File photo){
+            photoInput.sendKeys(photo.getAbsolutePath());
+            return this;
+        }
 
-        public void clickSave(){
+        public boolean theEmployeeHasAdded(){
+            return new WebDriverWait(driver, Duration.ofSeconds(5)).until(ExpectedConditions.urlContains("pim/viewPersonalDetails/empNumber"));
+        }
+
+        public EmployeePersonalDetailsPage clickSave(){
             click(saveButton);
+            return new EmployeePersonalDetailsPage(driver);
         }
 
     }
