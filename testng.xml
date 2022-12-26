@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="4" verbose="2" name="All Tests" annotations="JDK">
+    <parameter name="headless" value="true"/>
+    <parameter name="remote" value="true"/>
+    <test name="AddEmployees">
+        <classes>
+            <class name="AddEmployeeTests"/>
+        </classes>
+    </test>
+
+</suite>

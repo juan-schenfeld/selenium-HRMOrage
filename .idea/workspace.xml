@@ -9,7 +9,10 @@
   <component name="ChangeListManager">
     <list default="true" id="abd40d66-3434-4d1d-b05c-27f8794ba935" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/AddEmployeeTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/AddEmployeeTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/PIMPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PIMPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BaseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/testng.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +57,12 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.AddEmployeeTests">
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn test" />
+    </option>
+  </component>
+  <component name="RunManager" selected="TestNG./home/juan-schenfeld/IdeaProjects/selenium-HRMOrange/testng.xml">
     <configuration name="AddEmployeeTests" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="selenium-HRMOrange" />
       <option name="PACKAGE_NAME" value="" />
@@ -102,12 +110,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="test.run" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="/home/juan-schenfeld/IdeaProjects/selenium-HRMOrange/testng.xml" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="selenium-HRMOrange" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="test" />
-      <option name="METHOD_NAME" value="run" />
-      <option name="TEST_OBJECT" value="METHOD" />
+      <option name="SUITE_NAME" value="$PROJECT_DIR$/testng.xml" />
+      <option name="TEST_OBJECT" value="SUITE" />
       <properties />
       <listeners />
       <method v="2">
@@ -116,11 +122,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.AddEmployeeTests" />
+        <item itemvalue="TestNG./home/juan-schenfeld/IdeaProjects/selenium-HRMOrange/testng.xml" />
         <item itemvalue="TestNG.AddEmployeeTests.testAddEmployeeWithoutCredentials" />
-        <item itemvalue="TestNG.AddEmployeeTests.testAddEmployeeWithCredentials" />
         <item itemvalue="TestNG.LoginTests.testDefaultLogin" />
-        <item itemvalue="TestNG.test.run" />
+        <item itemvalue="TestNG.AddEmployeeTests.testAddEmployeeWithCredentials" />
+        <item itemvalue="TestNG.AddEmployeeTests" />
       </list>
     </recent_temporary>
   </component>
