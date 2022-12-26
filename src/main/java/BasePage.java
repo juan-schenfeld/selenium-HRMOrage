@@ -8,6 +8,7 @@ import java.time.Duration;
 
 class BasePage {
     protected WebDriver driver;
+    private final int DEFAULT_SECONDS = 10;
 
     public BasePage(WebDriver driver) {
         this.driver = driver;
@@ -19,7 +20,7 @@ class BasePage {
     }
 
     protected WebElement visibilityOf(WebElement element) {
-        return visibilityOf(element, 5);
+        return visibilityOf(element, DEFAULT_SECONDS);
     }
 
     protected void click(WebElement element, int seconds) {
@@ -27,7 +28,7 @@ class BasePage {
     }
 
     protected void click(WebElement element) {
-        click(element, 5);
+        click(element, DEFAULT_SECONDS);
     }
 
     protected void sendKeys(WebElement element, String keys, int seconds) {
@@ -36,7 +37,7 @@ class BasePage {
     }
 
     protected void sendKeys(WebElement element, String keys) {
-        sendKeys(element, keys, 5);
+        sendKeys(element, keys, DEFAULT_SECONDS);
     }
 
 
@@ -46,6 +47,6 @@ class BasePage {
     }
 
     protected String getText(WebElement element) {
-        return getText(element, 5);
+        return getText(element, DEFAULT_SECONDS);
     }
 }
