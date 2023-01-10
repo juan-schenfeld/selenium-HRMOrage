@@ -3,9 +3,11 @@
 <suite thread-count="4" verbose="2" name="All Tests" annotations="JDK">
     <parameter name="headless" value="true"/>
     <parameter name="remote" value="true"/>
-    <test name="AddEmployees">
+    <test name="AllTests">
         <classes>
+            <class name="LoginTests"/>
             <class name="AddEmployeeTests"/>
+            <class name="RemoveEmployeeTests"/>
         </classes>
     </test>
 

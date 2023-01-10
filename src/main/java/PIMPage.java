@@ -1,3 +1,5 @@
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -11,6 +13,14 @@ public class PIMPage extends NavBar{
 
     @FindBy(xpath="//button[contains(string(), ' Add')]")
     private WebElement addEmployeeButton;
+    @FindBy(xpath="//button[contains(string(),'Delete Selected')]")
+    private WebElement deleteSelectedButton;
+    @FindBy(xpath="//button[contains(string(), ' Yes, Delete ')]")
+    private WebElement confirmDeletionButton;
+    @FindBy(xpath="//div[contains(string(), 'Employee Id')]/../div/input")
+    private WebElement employeeIdField;
+    @FindBy(xpath="//button[string()=' Search ']")
+    private WebElement searchButton;
 
     public PIMPage(WebDriver driver) {
         super(driver);
@@ -19,6 +29,20 @@ public class PIMPage extends NavBar{
     public AddEmployeePage addEmployeePage(){
         visibilityOf(addEmployeeButton).click();
         return new AddEmployeePage(driver);
+    }
+
+
+    public PIMPage searchEmployeeById(String id){
+        sendKeys(employeeIdField, id);
+        click(searchButton);
+        return this;
+    }
+    public PIMPage deleteEmployee(String id){
+        searchEmployeeById(id);
+        presenceOfElementLocated(By.xpath("//div[contains(string(), '"+ id +"')]/../../div/div/div/label/span/i ")).click();
+        click(deleteSelectedButton);
+        click(confirmDeletionButton);
+        return this;
     }
 
     public static class AddEmployeePage extends NavBar {
@@ -67,7 +91,7 @@ public class PIMPage extends NavBar{
         }
 
         public AddEmployeePage setId(String  id){
-            sendKeys(idField, id);
+            sendKeys(idField, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, id);
             return this;
         }
 

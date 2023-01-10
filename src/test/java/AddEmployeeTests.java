@@ -31,8 +31,7 @@ public class AddEmployeeTests extends BaseTest{
         String lastName = "Skywalker";
         File photo = new File("src/test/resources/luke.skywalker.jpeg");
         var AddEmployeePage = homePage.defaultLogin().goToPIM().addEmployeePage()
-                .fillFullName(firstName, middleName, lastName)
-                .setId("").addPhoto(photo);
+                .fillFullName(firstName, middleName, lastName).addPhoto(photo);
         var employeeDetailsPage = AddEmployeePage.clickSave();
         assertTrue(AddEmployeePage.theEmployeeHasAdded());
         assertEquals(employeeDetailsPage.getEmployeeFullName(), firstName + " " + lastName);
